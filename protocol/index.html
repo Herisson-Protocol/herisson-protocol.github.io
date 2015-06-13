@@ -1,0 +1,444 @@
+---
+title: Full protocol specifications
+permalink: /protocol/
+protocolversion: v0.2
+---
+
+<div class="protocol">
+    <h2>Protocol {{ page.protocolversion }}</h2>
+
+    <table>
+        <caption>Friend's info Request</caption>
+        <thead>
+            <tr>
+                <th>Node A</th>
+                <th>Traffic</th>
+                <th>Node B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="request">
+<pre><code class="http hljs">GET /info HTTP/1.1
+Host: example.com
+</code></pre>
+                    </div>
+                </td>
+                <td class="ltr"></td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-ok">200</span>
+                        <span class="response-detail">Everything OK</span>
+<pre><code class="http hljs">HTTP/1.1 200 OK
+Content-Type: application/json
+</code>
+<code class="javascript hljs">{ 
+//the website official name
+'sitename': 'Herisson official site',
+// the email address of Herisson site administrator
+'adminEmail': 'admin@site.com',
+// the version of Herisson protocol used by this site
+'version': '1.2'
+}
+</code></pre>
+                    </div>
+                    <div class="or"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-error">404</span>
+                        <span class="response-detail">Not a Herisson site, or site is closed</span>
+<pre><code class="http hljs">HTTP/1.1 404 Not Found
+</code></pre>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <table>
+        <caption>Friend's Key Request</caption>
+        <thead>
+            <tr>
+                <th>Node A</th>
+                <th>Traffic</th>
+                <th>Node B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="request">
+<pre><code class="http hljs">GET /publicKey HTTP/1.1
+Host: example.com
+</code></pre>
+                    </div>
+                </td>
+                <td class="ltr"></td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-ok">200</span>
+                        <span class="response-detail">Everything OK</span>
+<pre><code class="http hljs">HTTP/1.1 200 OK
+Content-Type: text/plain
+</code>
+<code class="hljs">
+TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBp
+c2NpbmcgZWxpdCwgc2VkIGRvIGVpdXNtb2QgdGVtcG9yIGluY2lkaWR1bnQg
+dXQgbGFib3JlIGV0IGRvbG9yZSBtYWduYSBhbGlxdWEuIFV0IGVuaW0gYWQg
+bWluaW0gdmVuaWFtLCBxdWlzIG5vc3RydWQgZXhlcmNpdGF0aW9uIHVsbGFt
+Y28gbGFib3JpcyBuaXNpIHV0IGFsaXF1aXAgZXggZWEgY29tbW9kbyBjb25z
+ZXF1YXQuIER1aXMgYXV0ZSBpcnVyZSBkb2xvciBpbiByZXByZWhlbmRlcml0
+IGluIHZvbHVwdGF0ZSB2ZWxpdCBlc3NlIGNpbGx1bSBkb2xvcmUgZXUgZnVn
+aWF0IG51bGxhIHBhcmlhdHVyLiBFeGNlcHRldXIgc2ludCBvY2NhZWNhdCBj
+dXBpZGF0YXQgbm9uIHByb2lkZW50LCBzdW50IGluIGN1bHBhIHF1aSBvZmZp
+Y2lhIGRlc2VydW50IG1vbGxpdCBhbmltIGlkIGVzdCBsYWJvcnVtLgo=
+</code></pre>
+                        <div class="note">
+                            Friend gives you his publickey
+                        </div>
+                    </div>
+                    <div class="or"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-error">404</span>
+                        <span class="response-detail">Not a Herisson site, or site is closed</span>
+<pre><code class="http hljs">HTTP/1.1 404 Not Found
+</code></pre>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+    <table>
+        <caption>Friend's Request</caption>
+        <thead>
+            <tr>
+                <th>Node A</th>
+                <th>Traffic</th>
+                <th>Node B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="request">
+<pre><code class="http hljs">POST /ask HTTP/1.1
+Host: example.com
+
+url=&lt;URL&gt;&amp;signature=&lt;signature&gt;
+
+</code></pre>
+                    </div>
+                </td>
+                <td class="ltr"></td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-ok">200</span>
+                        <span class="response-detail">Need validation</span>
+<pre><code class="http hljs">HTTP/1.1 200 OK
+</code></pre>
+                        <div class="note">
+                            Friend needs to manually validate your request.
+                            Your request is pending, you will be notified later if it is validated.
+                        </div>
+                    </div>
+                    <div class="or"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-ok">202</span>
+                        <span class="response-detail">Friend Accepted</span>
+<pre><code class="http hljs">HTTP/1.1 202 Accepted
+</code></pre>
+                        <div class="note">
+                            Friend has accept your request automatically.
+                            You're good to go !
+                        </div>
+                    </div>
+                    <div class="or"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-nok">403</span>
+                        <span class="response-detail">This site don't want friends</span>
+<pre><code class="http hljs">HTTP/1.1 403 Forbidden
+</code></pre>
+                        <div class="note">
+                            Friend refuses new friends. Don't bother.
+                        </div>
+                    </div>
+                    <div class="or"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-error">404</span>
+                        <span class="response-detail">Not a Herisson site, or site is closed</span>
+<pre><code class="http hljs">HTTP/1.1 404 Not Found
+</code></pre>
+                    </div>
+                    <div class="or"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-nok">417</span>
+                        <span class="response-detail">Protocol error</span>
+<pre><code class="http hljs">HTTP/1.1 417 Expectation Failed
+</code></pre>
+                        <div class="note">
+                            Transmission protocol error.
+                            Probably some public/private encryption mess.
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <table>
+        <caption>Friend's Validation</caption>
+        <thead>
+            <tr>
+                <th>Node A</th>
+                <th>Traffic</th>
+                <th>Node B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="request">
+<pre><code class="http hljs">POST /validate HTTP/1.1
+Host: example.com
+
+url=&lt;URL&gt;&amp;signature=&lt;signature&gt;
+
+</code></pre>
+                    </div>
+                </td>
+                <td class="ltr"></td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-ok">200</span>
+                        <span class="response-detail">Validation Acknowledged</span>
+<pre><code class="http hljs">HTTP/1.1 200 OK
+
+1
+</code></pre>
+                        <div class="note">
+                            Friend received your validation and the friendship is now mutual.
+                        </div>
+                    </div>
+                    <div class="or"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-error">404</span>
+                        <span class="response-detail">Not a Herisson site, or site is closed</span>
+<pre><code class="http hljs">HTTP/1.1 404 Not Found
+
+1
+</code></pre>
+                    </div>
+                    <div class="or"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-nok">417</span>
+                        <span class="response-detail">Protocol error</span>
+<pre><code class="http hljs">HTTP/1.1 417 Expectation Failed
+
+1
+</code></pre>
+                        <div class="note">
+                            Transmission protocol error.
+                            Probably some public/private encryption mess.
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+    <table>
+        <caption>Friend search</caption>
+        <thead>
+            <tr>
+                <th>Node A</th>
+                <th>Traffic</th>
+                <th>Node B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="request">
+<pre><code class="http hljs">POST /retrieve HTTP/1.1
+Host: example.com
+
+url=&lt;URL&gt;&amp;signature=&lt;signature&gt;
+
+</code></pre>
+                    </div>
+                </td>
+                <td class="ltr"></td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-ok">200</span>
+                        <span class="response-detail">Validation Acknowledged</span>
+<pre><code class="http hljs">HTTP/1.1 200 OK
+
+1
+</code></pre>
+                        <div class="note">
+                            Friend received your validation and the friendship is now mutual.
+                        </div>
+                    </div>
+                    <div class="or"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-error">404</span>
+                        <span class="response-detail">Not a Herisson site, or site is closed</span>
+<pre><code class="http hljs">HTTP/1.1 404 Not Found
+
+1
+</code></pre>
+                    </div>
+                    <div class="or"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="rtl"></td>
+                <td>
+                    <div class="response">
+
+                        <span class="response-code-nok">417</span>
+                        <span class="response-detail">Protocol error</span>
+<pre><code class="http hljs">HTTP/1.1 417 Expectation Failed
+
+1
+</code></pre>
+                        <div class="note">
+                            Transmission protocol error.
+                            Probably some public/private encryption mess.
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

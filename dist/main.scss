@@ -1,0 +1,336 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+// Minima also includes a mixin for defining media queries.
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+
+// Import partials from the `minima` theme.
+@import "minima";
+
+// @import "style.scss";
+//$color-emerald: #2dcc70;
+//$color-turquoise: #1bbc9b;
+$color-flat-orange: #e67e22;
+$color-flat-red: #e74c3c;
+$color-flat-green: #2ecc71;
+$color-flat-yellow: #FCEFBA;
+
+$color-darkgreen: #1d8c74;
+$color-green: #67ce92;
+
+$color-darkgray: #333;
+
+$primary-color: #1d8c74;
+
+$text-color: #eee;
+
+$width-request: 500px;
+$width-response: 500px;
+$width-traffic: 50px;
+$width-body: $width-request + $width-response + $width-traffic;
+
+html {
+  padding: 0;
+}
+
+body {
+  color: $text-color;
+  font-family: "Helvetica", "Arial", 'Open Sans', sans-serif;
+  font-size: 17px;
+  padding: 50px 0 50px 0;
+  //padding-top: 70px;
+  margin: 0 auto;
+  //max-width: 80em;
+  line-height: 1.5;
+  font-weight: bold;
+
+
+  > div {
+//    margin: 0em 10em;
+
+  }
+}
+
+
+@mixin header {
+  background-color: $color-darkgreen;
+  color: white;
+  text-align: center;
+}
+
+@mixin pretty-round($size:10px) {
+  border-radius: $size;
+  padding: $size;
+}
+
+section {
+  &.presentation {
+    background-color: #27ae60;
+  }
+  &.how {
+    //background-color: #2ecc71;
+    //background-color: #f4f4ee;
+    position: relative;
+    &:after {
+      content: "";
+      background: url(http://pre00.deviantart.net/c211/th/pre/f/2011/111/b/a/neural_network_by_los_mandoade-d3eim1d.jpg)
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;   
+    }
+  }
+  &.implementations {
+  }
+
+}
+
+header {
+  text-align: center;
+  width: 100%;
+  background-color: #fff;
+  color: $color-darkgreen;
+
+  h1 {
+    font-size: 40px;
+    margin: 0;
+  }
+  .version {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+h2 {
+  color: $text-color;
+  font-size: 30px;
+  margin-top: 1em;
+  padding: 20px;
+  padding-top: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  //background-color: $primary-color;
+}
+
+h3 {
+  //color: $color-darkgreen;
+  margin: 0.5em;
+  font-weight: bold;
+  //margin-top: 1em;
+  //padding: 20px;
+  //padding-top: 1em;
+  height: 25px;
+  &:before {
+    margin-right: 10px;
+    font-size: 24px;
+  }
+}
+
+.how {
+
+}
+
+pre {
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  overflow: auto;
+}
+
+.intro {
+  text-align: center;
+  color: $color-darkgreen;
+  font-size: 17px;
+  margin: 10px auto 30px;
+  padding: 20px;
+  display: block;
+  width: $width-body/1.5;
+
+}
+
+
+.protocol { 
+  table {
+    background-color: white;
+    border-collapse: collapse;
+    margin: 0 auto 0 auto;
+    width: 100%;
+
+    caption {
+      color: #fff;
+      background-color: $color-darkgreen;
+      font-size: 60px;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+    
+    thead {
+      th {
+        font-weight: bold;
+        color: $color-darkgreen;
+        font-size: 30px;
+        padding: 4px;
+      }
+    }
+    tbody {
+      td {
+        padding-bottom: 20px;
+        
+        &:nth-of-type(1) {
+          padding-left: 50px;
+          width: $width-request;
+        }
+
+        &:nth-of-type(2) {
+          font-size: 40px;
+          text-align: center;
+          width: $width-traffic;
+        }
+
+        &:nth-of-type(3) {
+          padding-right: 50px;
+          width: $width-response;
+        }
+
+        &.rtl:before {
+          content:"←";
+        }
+
+        &.ltr:before {
+          content:"→";
+        }
+        
+      }
+
+    }
+  }
+
+  .response-code {
+    @include pretty-round(5px);
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .response-code-ok {
+    @extend .response-code;
+    background-color: $color-flat-green;
+
+  }
+
+  .response-code-nok {
+    @extend .response-code;
+    background-color: $color-flat-orange;
+  }
+
+  .response-code-error {
+    @extend .response-code;
+    background-color: $color-flat-red;
+  }
+
+  .response-detail {
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 15px;
+  }
+
+  .response {
+
+    margin-bottom: 30px;
+
+    .response-detail + pre {
+      margin-top: 10px;
+    }
+
+    .separator {
+      display: block;
+      height: 30px;
+    }
+  }
+
+  .or {
+    @include header;
+    @include pretty-round(5px);
+    font-size: 16px;
+    margin: auto;
+    width: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &:before {
+      content: "or";
+    }
+  }
+
+  .note {
+    @include pretty-round;
+    background-color: $color-flat-yellow;
+    margin: 10px auto;
+    width: 90%;
+  }
+
+}
+
+.clear {
+  clear: both;
+}
+
+
+/*
+menu {
+    text-align: center;
+
+    a {
+      border-radius: 90px;
+      display: inline-block;
+      background-color: $color-darkgreen;
+      color: white;
+      font-size: 20px;
+      height: 180px;
+      width: 180px;
+      text-align: center;
+      text-decoration: none;
+      line-height: 160px;
+
+      margin: 0 20px;
+    }
+
+}
+*/
