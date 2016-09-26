@@ -23,6 +23,8 @@
         <script type="text/javascript" src="https://use.fontawesome.com/384bed47c8.js"></script>
 
         <link href="{{site.url}}/dist/main.css" type="text/css" rel="stylesheet" />
+        <link href="{{site.url}}/dist/navbar.css" type="text/css" rel="stylesheet" />
+        <link href="{{site.url}}/dist/fontcustom.css" type="text/css" rel="stylesheet" />
         <script type="text/javascript" src="{{site.url}}/dist/onepage.js">
         </script>
         <script type="text/javascript">
@@ -54,14 +56,15 @@
                 </div>
             </div>
         </nav>
-        <h1>{{site.title}}</h1>
-
+        <section class="header" id="header">
+            <div class="container">
+                <p class="logo"><i class="icon-herisson-large"></i></p>
+                <h1>{{site.title}}</h1>
+                <h4>Host, backup, manage and share your bookmarks</h4>
+            </div>
+        </section>
         <div class="content">
         {{ content }}
         </div>
-
-        <script type="text/javascript">
-        addheight();
-        </script>
     </body>
 </html>

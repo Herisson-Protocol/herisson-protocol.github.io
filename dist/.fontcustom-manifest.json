@@ -1,0 +1,50 @@
+{
+  "checksum": {
+    "previous": "3049cad7d51db6e52e8b332febe7d628623f2b1d9eaf8284dca9b922141e05cf",
+    "current": "3049cad7d51db6e52e8b332febe7d628623f2b1d9eaf8284dca9b922141e05cf"
+  },
+  "fonts": [
+    "./fontcustom.ttf",
+    "./fontcustom.svg",
+    "./fontcustom.woff",
+    "./fontcustom.eot"
+  ],
+  "glyphs": {
+    "herisson-large": {
+      "codepoint": 61698,
+      "source": "./herisson-large.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": false,
+    "css_selector": ".icon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 64,
+    "font_descent": 0,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "fontcustom",
+    "force": false,
+    "input": {
+      "templates": ".",
+      "vectors": "."
+    },
+    "no_hash": true,
+    "output": {
+      "css": ".",
+      "fonts": ".",
+      "preview": "."
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "templates": [
+      "css",
+      "preview"
+    ]
+  },
+  "templates": [
+    "./fontcustom.css",
+    "./fontcustom-preview.html"
+  ]
+}
