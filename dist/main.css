@@ -1,0 +1,229 @@
+@charset "UTF-8";
+html {
+  padding: 0; }
+
+body {
+  color: #eee;
+  font-family: "Helvetica", "Arial", "Open Sans", sans-serif;
+  padding-top: 2em;
+  margin: 0 auto;
+  line-height: 1.5; }
+  body a {
+    color: #333; }
+
+i[class*="fa"]:before {
+  margin-right: 0.5em; }
+
+.navbar-default {
+  background-image: none;
+  border: 0; }
+
+section {
+  padding: 4em 0em; }
+  section.header {
+    background: url(herisson-logo.png) no-repeat top center;
+    height: 600px; }
+    section.header .logo {
+      font-size: 8em;
+      margin: auto;
+      width: 20%;
+      text-align: center;
+      height: 430px; }
+  section.presentation {
+    background-color: #478e65;
+    color: white; }
+  section.how {
+    background-color: white;
+    color: #333; }
+  section.gettingstarted {
+    counter-reset: gettingstarted;
+    background-color: #478e65;
+    color: white; }
+    section.gettingstarted .tryit {
+      list-style-type: none; }
+      section.gettingstarted .tryit li {
+        counter-increment: gettingstarted;
+        line-height: 2em;
+        margin-bottom: 1em; }
+        section.gettingstarted .tryit li:before {
+          content: counter(gettingstarted);
+          margin-right: 0.5em;
+          border-radius: 1em;
+          width: 2em;
+          height: 2em;
+          display: inline-block;
+          text-align: center;
+          color: #333;
+          background-color: #fff; }
+  section.implementations {
+    background-color: white;
+    color: #333; }
+    section.implementations ul.features {
+      list-style-type: none; }
+    section.implementations ul.links {
+      list-style-type: none; }
+      section.implementations ul.links li {
+        display: inline-block;
+        margin: 0em 1em; }
+  section.about {
+    background-color: #478e65; }
+
+h1 {
+  color: black;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center; }
+
+h2 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  text-align: center; }
+
+h3 {
+  margin: 0.5em;
+  margin-left: 0;
+  height: 25px; }
+
+h4 {
+  color: black;
+  font-size: 1.5em;
+  text-align: center; }
+
+pre {
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  overflow: auto; }
+
+.intro {
+  text-align: center;
+  color: #478e65;
+  font-size: 17px;
+  margin: 10px auto 30px;
+  padding: 20px;
+  display: block;
+  width: 700px; }
+
+.protocol table {
+  background-color: white;
+  border-collapse: collapse;
+  margin: 0 auto 0 auto;
+  width: 100%; }
+  .protocol table caption {
+    color: #fff;
+    background-color: #478e65;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px; }
+  .protocol table thead th {
+    font-weight: bold;
+    color: #478e65;
+    font-size: 30px;
+    padding: 4px; }
+  .protocol table tbody td {
+    padding-bottom: 20px; }
+    .protocol table tbody td:nth-of-type(1) {
+      padding-left: 50px;
+      width: 500px; }
+    .protocol table tbody td:nth-of-type(2) {
+      font-size: 40px;
+      text-align: center;
+      width: 50px; }
+    .protocol table tbody td:nth-of-type(3) {
+      padding-right: 50px;
+      width: 500px; }
+    .protocol table tbody td.rtl:before {
+      content: "←"; }
+    .protocol table tbody td.ltr:before {
+      content: "→"; }
+.protocol .response-code, .protocol .response-code-ok, .protocol .response-code-nok, .protocol .response-code-error {
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold; }
+.protocol .response-code-ok {
+  background-color: #2ecc71; }
+.protocol .response-code-nok {
+  background-color: #e67e22; }
+.protocol .response-code-error {
+  background-color: #e74c3c; }
+.protocol .response-detail {
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 15px;
+  color: #333; }
+.protocol .response {
+  margin-bottom: 30px; }
+  .protocol .response .response-detail + pre {
+    margin-top: 10px; }
+  .protocol .response .separator {
+    display: block;
+    height: 30px; }
+.protocol .or {
+  background-color: #478e65;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  margin: auto;
+  width: 30px;
+  padding-left: 10px;
+  padding-right: 30px; }
+  .protocol .or:before {
+    content: "or"; }
+.protocol .note {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #FCEFBA;
+  margin: 10px auto;
+  color: #333;
+  width: 90%; }
+
+.navbar-default {
+  background-color: #478e65;
+  border-color: #478e65; }
+  .navbar-default .navbar-brand {
+    color: #ffffff; }
+    .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+      color: #ffffff; }
+  .navbar-default .navbar-text {
+    color: #ffffff; }
+  .navbar-default .navbar-nav > li > a {
+    color: #ffffff; }
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+      color: #ffffff; }
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #478e65; }
+  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #ffffff;
+    background-color: #478e65; }
+  .navbar-default .navbar-toggle {
+    border-color: #478e65; }
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+      background-color: #478e65; }
+    .navbar-default .navbar-toggle .icon-bar {
+      background-color: #ffffff; }
+  .navbar-default .navbar-collapse,
+  .navbar-default .navbar-form {
+    border-color: #ffffff; }
+  .navbar-default .navbar-link {
+    color: #ffffff; }
+    .navbar-default .navbar-link:hover {
+      color: #ffffff; }
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff; }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+      color: #ffffff; }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #478e65; } }
+
+/*# sourceMappingURL=main.css.map */

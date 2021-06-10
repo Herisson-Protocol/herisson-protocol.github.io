@@ -7,11 +7,13 @@ function scrollmovement() {
             e.preventDefault();
             // hash permet de cibler le href de nos liens.
             var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 1000, function () {
-                window.location.hash = hash;
-            });
+            if (this.href.match(/index.html/) {
+                $('html, body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000, function () {
+                    window.location.hash = hash;
+                });
+            }
         });
     });
 }

@@ -1,11 +1,75 @@
----
-title: Full protocol specifications
-permalink: /protocol/
-protocolversion: v0.2
----
+<!doctype html>
+<html lang="en">
 
-<div class="protocol">
-    <h2>Protocol {{ page.protocolversion }}</h2>
+    <head>
+        <meta charset="utf-8" />
+        <title>Herisson Protocol</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/magula.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+        <script type="text/javascript" src="https://use.fontawesome.com/384bed47c8.js"></script>
+
+        <link href="dist/main.css" type="text/css" rel="stylesheet" />
+        <link href="dist/navbar.css" type="text/css" rel="stylesheet" />
+        <!--
+        <link href="dist/fontcustom.css" type="text/css" rel="stylesheet" />
+        -->
+        <script type="text/javascript" src="dist/onepage.js">
+        </script>
+        <script type="text/javascript">
+        scrollmovement();
+        </script>
+
+    </head>
+    <body data-spy="scroll" data-target=".navbar">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        Herisson Protocol
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html#presentation">Presentation</a></li>
+                        <li><a href="index.html#how">How it works</a></li>
+                        <li><a href="index.html#gettingstarted">Getting started</a></li>
+                        <li><a href="index.html#implementations">Implementations</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--
+                        <li><a href="blog/">Blog</a></li>
+                        -->
+                        <li><a href="protocol.html">Protocol</a></li>
+                        <li><a href="https://github.com/Herisson-Protocol/herisson-protocol.github.io/" class="fa fa-github"> Github</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="header" id="header">
+            <div class="container">
+                <p class="logo"><i class="icon-herisson-large"></i></p>
+                <h1>Herisson Protocol</h1>
+                <h4>Host, backup, manage and share your bookmarks</h4>
+            </div>
+        </section>
+        <div class="content">
+        <div class="protocol">
+        <h4>Protocol v0.2</h4>
 
     <table>
         <caption>Friend's info Request</caption>
@@ -442,3 +506,7 @@ url=&lt;URL&gt;&amp;signature=&lt;signature&gt;
     </table>
 
 </div>
+
+        </div>
+    </body>
+</html>
